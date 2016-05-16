@@ -10,13 +10,13 @@ import static org.junit.Assert.assertEquals;
 public class RectangleTest {
     @Test
     public void shouldAddIntegers() {
-        assertEquals(2,1+1);
+        assertEquals(2, 1 + 1);
     }
 
     @Test
     public void shouldCalculateArea() {
-        Rectangle rectangle = new Rectangle(2,3);
-        assertEquals(6,rectangle.calculateArea(),0);
+        Rectangle rectangle = new Rectangle(2, 3);
+        assertEquals(6, rectangle.calculateArea(), 0);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class RectangleTest {
 
     @Test
     public void zeroWidthRectangleHasNoArea() {
-        Rectangle rectangle = new Rectangle(1.0,0.0);
+        Rectangle rectangle = new Rectangle(1.0, 0.0);
         assertEquals(0.0, rectangle.calculateArea(), 0);
     }
 
@@ -49,7 +49,6 @@ public class RectangleTest {
     }
 
     @Test
-
     public void zeroLengthRectangleHasNoPerimeter() {
         Rectangle rectangle = new Rectangle(0.0, 0.0);
         assertEquals(0.0, rectangle.calculatePerimeter(), 0);
@@ -59,5 +58,23 @@ public class RectangleTest {
     public void perimeterShouldBeTwiceTheHeightForZeroLength() {
         Rectangle rectangle = new Rectangle(0.0, 2);
         assertEquals(4, rectangle.calculatePerimeter(), 0);
+    }
+
+
+    @Test
+    public void shouldCalculateAreaForSquare() {
+        Rectangle square = Rectangle.createSquare(1.0);
+        assertEquals(1.0, square.calculateArea(), 0);
+    }
+
+    @Test
+    public void shouldCalculatePerimeterForSquare() {
+        Rectangle square = Rectangle.createSquare(1.0);
+        assertEquals(4.0, square.calculatePerimeter(), 0);
+    }
+
+    @Test(expected = InvalidParameterException.class)
+    public void shouldNotCreateSquareWhenReceiveNegativeNumber() {
+        Rectangle.createSquare(-1);
     }
 }

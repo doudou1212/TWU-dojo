@@ -3,7 +3,7 @@ import java.security.InvalidParameterException;
 /**
  * Created by sunjing on 5/10/16.
  */
-public class Rectangle implements IShape{
+public class Rectangle implements IShape {
     private double width;
     private double height;
 
@@ -14,6 +14,10 @@ public class Rectangle implements IShape{
 
         this.width = width;
         this.height = height;
+    }
+
+    public static Rectangle createSquare(double side) {
+        return new Rectangle(side, side);
     }
 
     @Override

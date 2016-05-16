@@ -11,7 +11,7 @@ public class CircleTest {
     @Test
     public void shouldCalculateArea() {
         Circle circle = new Circle(100);
-        assertEquals(314,circle.calculateArea(), 0);
+        assertEquals(314, circle.calculateArea(), 0);
     }
 
     @Test
@@ -21,9 +21,9 @@ public class CircleTest {
     }
 
     @Test
-    public void shouldCalculatePerimeter () {
+    public void shouldCalculatePerimeter() {
         Circle circle = new Circle(100);
-        assertEquals(628,circle.calculatePerimeter(), 0.0);
+        assertEquals(628, circle.calculatePerimeter(), 0.0);
     }
 
     @Test(expected = InvalidParameterException.class)
@@ -32,7 +32,7 @@ public class CircleTest {
     }
 
     @Test
-    public void perimeterShouldBeZeroForRadiusZero(){
+    public void perimeterShouldBeZeroForRadiusZero() {
         Circle circle = new Circle(0.0);
         assertEquals(0.0, circle.calculatePerimeter(), 0);
     }
