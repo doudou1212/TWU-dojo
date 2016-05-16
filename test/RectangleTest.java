@@ -49,6 +49,7 @@ public class RectangleTest {
     }
 
     @Test
+
     public void zeroLengthRectangleHasNoPerimeter() {
         Rectangle rectangle = new Rectangle(0.0, 0.0);
         assertEquals(0.0, rectangle.calculatePerimeter(), 0);
